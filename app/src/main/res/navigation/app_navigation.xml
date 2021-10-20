@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/app_navigation"
+    app:startDestination="@id/nv_login_fragment">
+
+    <fragment
+        android:id="@+id/nv_login_fragment"
+        android:name="com.example.loginapp.LoginFrragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_login_to_forgot"
+            app:destination="@+id/nv_forgot_password_fragment" />
+
+        <action
+            android:id="@+id/action_login_to_dashboard"
+            app:destination="@+id/nv_dashboard_fragment"
+            app:popUpTo="@+id/app_navigation"
+            app:popUpToInclusive="true"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/nv_forgot_password_fragment"
+        android:name="com.example.loginapp.ForgotPasswordFragment"
+        android:label="fragment_forgot_password"
+        tools:layout="@layout/fragment_forgot_password" />
+
+    <fragment
+        android:id="@+id/nv_dashboard_fragment"
+        android:name="com.example.loginapp.DashboardFragment"
+        android:label="fragment_dashboard_fragment"
+        tools:layout="@layout/fragment_dashboard" />
+</navigation>
